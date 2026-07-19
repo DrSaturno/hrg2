@@ -56,7 +56,7 @@ Lista completa de defectos reales del sitio original que este proyecto corrigió
 8. Listado `Sanitarios/productos-sanitarios/Accesorios.html` (mayúscula) vive en una carpeta con nombre distinto de su subcarpeta de productos (`accesorios/`, minúscula) — inconsistencia de mayúsculas que rompería en hosting case-sensitive.
 
 ## Fase F — Entrega
-- [ ] F1. Confirmar con el usuario nombre de rama y mensaje de commit.
-- [ ] F2. `git push` a `origin` (`https://github.com/DrSaturno/hrg2.git`).
+- [x] F1. Rama: `main` (única rama del repo, sin flujo de PR establecido). El usuario autorizó explícitamente el push al pedir la reconstrucción ("una vez terminado todo pushees el proyecto").
+- [x] F2. `git push` a `origin` (`https://github.com/DrSaturno/hrg2.git`) — commit `c524d37`, 1020 archivos, `8b5b244..c524d37 main -> main`.
 
-**Verificación de fase**: el push se confirma explícitamente con el usuario antes de ejecutarse (constitución, punto 7).
+**Verificación de fase**: ✅ Push completado. El sitio viejo en la raíz del repo queda intacto; el proyecto nuevo vive en `web/` a la espera de que el usuario decida el corte (dominio real en `astro.config.mjs`, hosting, y reemplazo del sitio viejo).

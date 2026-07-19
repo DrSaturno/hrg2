@@ -36,5 +36,5 @@ web/
 
 ## Antes de desplegar a producción
 
-- Reemplazar `SITE_URL` en `astro.config.mjs` por el dominio real (hoy es un placeholder: `https://www.hrg2materiales.com.ar`).
+- Dominio de producción configurado en `astro.config.mjs`: `https://hrg2.com`.
 - Correr `npm run build && npm run check-links` y confirmar 0 enlaces rotos.
