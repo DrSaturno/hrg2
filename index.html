@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HRG2 - Materiales para Obra</title>
+        
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <!-- Estilos personalizados -->
+        <link rel="stylesheet" href="estilos.css">
+    </head>
+<body>
+    <!-- Cabecera dinámica -->
+    <div id="header"></div>
+
+    <!-- Sección Hero Principal -->
+    <div class="container mt-4">
+        <section class="hero-banner">
+            <div class="container px-4 px-md-5">
+                <div class="hero-banner__content">
+                    <span class="hero-banner__badge">Catálogo Oficial 2026</span>
+                    <h1 class="hero-banner__title">Materiales que definen <span>tu obra</span></h1>
+                    <p class="hero-banner__description">
+                        Explorá nuestro catálogo interactivo. Encontrá campanas, perfiles, sanitarios y conexiones de la más alta calidad con asesoramiento directo.
+                    </p>
+                    <div class="hero-banner__actions">
+                        <a href="#buscador-section" class="btn btn-primary">
+                            <i class="fas fa-search"></i> Explorar Catálogo
+                        </a>
+                        <a href="https://wa.me/5491150038106" target="_blank" class="btn btn-secondary text-white" style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.25);">
+                            <i class="fab fa-whatsapp"></i> WhatsApp Ventas
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Sección de Confianza y Beneficios -->
+    <div class="container">
+        <section class="features-grid">
+            <div class="feature-card">
+                <div class="feature-card__icon"><i class="fas fa-truck"></i></div>
+                <h3 class="feature-card__title">Entrega a Obra</h3>
+                <p class="feature-card__desc">Coordinamos la logística directa a tu obra en CABA y Gran Buenos Aires.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-card__icon"><i class="fas fa-user-shield"></i></div>
+                <h3 class="feature-card__title">Asesoría Técnica</h3>
+                <p class="feature-card__desc">Te ayudamos a elegir el producto exacto que tu instalación requiere.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-card__icon"><i class="fas fa-handshake"></i></div>
+                <h3 class="feature-card__title">Marcas Líderes</h3>
+                <p class="feature-card__desc">Comercializamos productos oficiales de Atrim, Sonca Hermanos, Latyn y más.</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Contenido Principal -->
+    <main class="container my-4">
+        <!-- Buscador y Filtros -->
+        <section class="search-filter-section mb-5" id="buscador-section">
+            <div class="search-filter-box">
+                <div class="row g-3">
+                    <div class="col-md-8">
+                        <div class="position-relative">
+                            <span class="position-absolute top-50 translate-middle-y start-0 ps-3 text-muted"><i class="fas fa-search"></i></span>
+                            <input type="text" id="buscador" class="form-control ps-5" placeholder="¿Qué materiales estás buscando? (ej: campanas, perfiles, conexiones...)">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <select id="filtro-categoria" class="form-select">
+                            <option value="todos">Todas las categorías</option>
+                            <option value="instalables">Instalables</option>
+                            <option value="terminaciones">Terminaciones</option>
+                            <option value="sanitarios">Sanitarios</option>
+                            <option value="conexiones">Conexiones</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Instalables -->
+        <section class="mb-5">
+            <h2 class="section-title">Instalables</h2>
+            <div class="row row-cols-2 row-cols-md-4 row-cols-lg-6 g-3">
+                <div class="col producto" data-categoria="instalables">
+                    <div class="card">
+                        <span class="card-badge">Cocina</span>
+                        <img src="Img/SoncaHermanos/Campanas/Campana_linea_murano.jpg" class="card-img-top" alt="Campanas">
+                        <div class="card-body">
+                            <h5 class="card-title">Campanas</h5>
+                            <a href="productos/Instalables/campanas/index.html" class="btn btn-primary btn-sm">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col producto" data-categoria="instalables">
+                    <div class="card">
+                        <span class="card-badge">Cocina</span>
+                        <img src="Img/SoncaHermanos/Purificadores/Purificadores_de_Cocina.jpg" class="card-img-top" alt="Purificadores">
+                        <div class="card-body">
+                            <h5 class="card-title">Purificadores</h5>
+                            <a href="productos/Instalables/purificadores/index.html" class="btn btn-primary btn-sm">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col producto" data-categoria="instalables">
+                    <div class="card">
+                        <span class="card-badge">Ventilación</span>
+                        <img src="Img/SoncaHermanos/Extractores/Extractores Cocina.jpg" class="card-img-top" alt="Extractores">
+                        <div class="card-body">
+                            <h5 class="card-title">Extractores</h5>
+                            <a href="productos/Instalables/Extractores/index.html" class="btn btn-primary btn-sm">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col producto" data-categoria="instalables">
+                    <div class="card">
+                        <span class="card-badge">Accesorios</span>
+                        <img src="Img/SoncaHermanos/Activadores/Activador Metálico.jpg" class="card-img-top" alt="Activadores">
+                        <div class="card-body">
+                            <h5 class="card-title">Activadores</h5>
+                            <a href="productos/Instalables/Activadores/index.html" class="btn btn-primary btn-sm">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col producto" data-categoria="instalables">
+                    <div class="card">
+                        <span class="card-badge">Baño</span>
+                        <img src="Img/SoncaHermanos/Botiquines/Botiquin.jpg" class="card-img-top" alt="Botiquines">
+                        <div class="card-body">
+                            <h5 class="card-title">Botiquines</h5>
+                            <a href="productos/Instalables/Botiquines/index.html" class="btn btn-primary btn-sm">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col producto" data-categoria="instalables">
+                    <div class="card">
+                        <span class="card-badge">Baño</span>
+                        <img src="Img/SoncaHermanos/Vanitorys/Vanitory2.jpg" class="card-img-top" alt="Vanitorys">
+                        <div class="card-body">
+                            <h5 class="card-title">Vanitorys</h5>
+                            <a href="productos/Instalables/Vanitorys/index.html" class="btn btn-primary btn-sm">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Terminaciones -->
+        <section class="mb-5">
+            <h2 class="section-title">Terminaciones</h2>
+            <div class="row row-cols-2 row-cols-md-4 row-cols-lg-6 g-3">
+                <div class="col producto" data-categoria="terminaciones">
+                    <div class="card">
+                        <span class="card-badge card-badge-accent">Perfiles</span>
+                        <img src="Img/ATRIM/Perfiles Decorativos/Angulos/angulo13.jpg" class="card-img-top" alt="Perfiles Decorativos">
+                        <div class="card-body">
+                            <h5 class="card-title">Perfiles Decorativos</h5>
+                            <a href="productos/Terminaciones/Perfiles-decorativos/index.html" class="btn btn-primary btn-sm">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col producto" data-categoria="terminaciones">
+                    <div class="card">
+                        <span class="card-badge card-badge-accent">Técnico</span>
+                        <img src="Img/ATRIM/Perfiles Tecnicos/Juntas de Dilatacion/dilatacion14.webp" class="card-img-top" alt="Perfil Técnico">
+                        <div class="card-body">
+                            <h5 class="card-title">Perfil Técnico</h5>
+                            <a href="productos/Terminaciones/Perfiles-tecnicos/index.html" class="btn btn-primary btn-sm">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col producto" data-categoria="terminaciones">
+                    <div class="card">
+                        <span class="card-badge card-badge-accent">Transición</span>
+                        <img src="Img/ATRIM/Perfiles de Transicion/Perfiles para pisos flotantes y alfombras/flotante11.webp" class="card-img-top" alt="Perfiles de Transición">
+                        <div class="card-body">
+                            <h5 class="card-title">Perfiles de Transición</h5>
+                            <a href="productos/Terminaciones/Perfiles-de-transicion/index.html" class="btn btn-primary btn-sm">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col producto" data-categoria="terminaciones">
+                    <div class="card">
+                        <span class="card-badge card-badge-accent">Nivelación</span>
+                        <img src="Img/ATRIM/Sistema de nivelacion/Cuñas Niveladoras/cuñas1.webp" class="card-img-top" alt="Sistema de Nivelación">
+                        <div class="card-body">
+                            <h5 class="card-title">Sistema de Nivelación</h5>
+                            <a href="productos/Terminaciones/sistema-de-nivelacion/index.html" class="btn btn-primary btn-sm">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col producto" data-categoria="terminaciones">
+                    <div class="card">
+                        <span class="card-badge card-badge-accent">EPS</span>
+                        <img src="Img/ATRIM/Zocalos y contramarcos/Accesorios para zocalos y contramarcos/zc1.webp" class="card-img-top" alt="Zócalos y Contramarcos">
+                        <div class="card-body">
+                            <h5 class="card-title">Zócalos y Contramarcos</h5>
+                            <a href="productos/Terminaciones/Zocalos-y-contramarcos/index.html" class="btn btn-primary btn-sm">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col producto" data-categoria="terminaciones">
+                    <div class="card">
+                        <span class="card-badge card-badge-accent">Drenaje</span>
+                        <img src="Img/ATRIM/Sistemas de drenaje/Desagues para duchas/desague10.webp" class="card-img-top" alt="Sistema de Drenaje">
+                        <div class="card-body">
+                            <h5 class="card-title">Sistema de Drenaje</h5>
+                            <a href="productos/Terminaciones/sistemas-de-drenaje/index.html" class="btn btn-primary btn-sm">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Sanitarios -->
+        <section class="mb-5">
+            <h2 class="section-title">Sanitarios</h2>
+            <div class="row row-cols-2 row-cols-md-4 row-cols-lg-6 g-3">
+                <div class="col producto" data-categoria="sanitarios">
+                    <div class="card">
+                        <span class="card-badge">Asientos</span>
+                        <img src="Img/Daccord/Asientos/Linea Soft/soft1.jpg" class="card-img-top" alt="Asientos">
+                        <div class="card-body">
+                            <h5 class="card-title">Asientos</h5>
+                            <a href="productos/Sanitarios/Asientos/index.html" class="btn btn-primary btn-sm">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col producto" data-categoria="sanitarios">
+                    <div class="card">
+                        <span class="card-badge">Accesorios</span>
+                        <img src="Img/Daccord/Sanitarios/Accesorios/accesorios8.jpg" class="card-img-top" alt="Accesorios">
+                        <div class="card-body">
+                            <h5 class="card-title">Accesorios</h5>
+                            <a href="productos/Sanitarios/productos-sanitarios/index.html" class="btn btn-primary btn-sm">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col producto" data-categoria="sanitarios">
+                    <div class="card">
+                        <span class="card-badge">Duchas</span>
+                        <img src="Img/Daccord/Sanitarios/Duchadores/duchadores4.jpg" class="card-img-top" alt="Duchadores">
+                        <div class="card-body">
+                            <h5 class="card-title">Duchadores</h5>
+                            <a href="productos/Sanitarios/productos-sanitarios/duchadores.html" class="btn btn-primary btn-sm">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col producto" data-categoria="sanitarios">
+                    <div class="card">
+                        <span class="card-badge">Accesorios</span>
+                        <img src="Img/Daccord/Sanitarios/Repisas/repisas2.jpg" class="card-img-top" alt="Repisas">
+                        <div class="card-body">
+                            <h5 class="card-title">Repisas</h5>
+                            <a href="productos/Sanitarios/productos-sanitarios/repisas.html" class="btn btn-primary btn-sm">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col producto" data-categoria="sanitarios">
+                    <div class="card">
+                        <span class="card-badge">Deco</span>
+                        <img src="Img/Daccord/Decoracion/Cestos/cestos2.png" class="card-img-top" alt="Cestos">
+                        <div class="card-body">
+                            <h5 class="card-title">Cestos</h5>
+                            <a href="productos/Sanitarios/Decoracion/cestos.html" class="btn btn-primary btn-sm">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col producto" data-categoria="sanitarios">
+                    <div class="card">
+                        <span class="card-badge">Deco</span>
+                        <img src="Img/Daccord/Decoracion/Escobillas/escobillas3.jpg" class="card-img-top" alt="Escobillas">
+                        <div class="card-body">
+                            <h5 class="card-title">Escobillas</h5>
+                            <a href="productos/Sanitarios/Decoracion/escobillas.html" class="btn btn-primary btn-sm">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Conexiones -->
+        <section class="mb-5">
+            <h2 class="section-title">Conexiones</h2>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col producto" data-categoria="conexiones">
+                    <div class="card p-3">
+                        <span class="card-badge">Flexibles</span>
+                        <img src="Img/Carrusel/07071622_BannerswebCNX-13.jpg" class="card-img-top" style="height: 180px; object-fit: cover;" alt="LatynFlex">
+                        <div class="card-body">
+                            <h5 class="card-title">LatynFlex</h5>
+                            <p class="card-text text-muted mb-3">Conexiones flexibles de alta calidad.</p>
+                            <a href="/Img/PDFS/latynflexok.pdf" download class="btn btn-secondary btn-sm w-100">
+                                <i class="fas fa-download"></i> Descargar Catálogo LatynFlex
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col producto" data-categoria="conexiones">
+                    <div class="card p-3">
+                        <span class="card-badge">Plásticas</span>
+                        <img src="Img/Carrusel/04261608_LATYNPLAST.jpg" class="card-img-top" style="height: 180px; object-fit: cover;" alt="LatynPlast">
+                        <div class="card-body">
+                            <h5 class="card-title">LatynPlast</h5>
+                            <p class="card-text text-muted mb-3">Soluciones plásticas para conexiones modernas.</p>
+                            <a href="/Img/PDFS/Latynplastok.pdf" download class="btn btn-secondary btn-sm w-100">
+                                <i class="fas fa-download"></i> Descargar Catálogo LatynPlast
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col producto" data-categoria="conexiones">
+                    <div class="card p-3">
+                        <span class="card-badge">Válvulas</span>
+                        <img src="Img/Carrusel/07161610_04261608VALFORTE1.jpg" class="card-img-top" style="height: 180px; object-fit: cover;" alt="Valforte">
+                        <div class="card-body">
+                            <h5 class="card-title">Valforte</h5>
+                            <p class="card-text text-muted mb-3">Válvulas y accesorios altamente confiables.</p>
+                            <a href="/Img/PDFS/Valforteok.pdf" download class="btn btn-secondary btn-sm w-100">
+                                <i class="fas fa-download"></i> Descargar Catálogo Valforte
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie de página dinámico -->
+    <div id="footer"></div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Scripts del sitio -->
+    <script src="js/filtros-buscador.js"></script>
+    <script src="includes.js"></script>
+</body>
+</html>
