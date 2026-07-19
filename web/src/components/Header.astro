@@ -1,0 +1,131 @@
+---
+type NavEntry =
+  | { type: 'dropdown'; label: string; items: { label: string; href: string }[] }
+  | { type: 'link'; label: string; href: string };
+
+const nav: NavEntry[] = [
+  {
+    type: 'dropdown',
+    label: 'Instalables',
+    items: [
+      { label: 'Campanas', href: '/productos/Instalables/campanas' },
+      { label: 'Purificadores', href: '/productos/Instalables/purificadores' },
+      { label: 'Extractores', href: '/productos/Instalables/Extractores' },
+      { label: 'Activadores', href: '/productos/Instalables/Activadores' },
+      { label: 'Vanitorys', href: '/productos/Instalables/Vanitorys' },
+      { label: 'Botiquines', href: '/productos/Instalables/Botiquines' },
+      { label: 'Tolvas', href: '/productos/Instalables/Tolvas' },
+      { label: 'Lavaderos', href: '/productos/Instalables/Lavaderos' },
+    ],
+  },
+  {
+    type: 'dropdown',
+    label: 'Terminaciones',
+    items: [
+      { label: 'Perfiles decorativos', href: '/productos/Terminaciones/Perfiles-decorativos' },
+      { label: 'Perfiles técnicos', href: '/productos/Terminaciones/Perfiles-tecnicos' },
+      { label: 'Perfiles de transición', href: '/productos/Terminaciones/Perfiles-de-transicion' },
+      { label: 'Zócalos y contramarcos', href: '/productos/Terminaciones/Zocalos-y-contramarcos' },
+      { label: 'Sistema de nivelación', href: '/productos/Terminaciones/sistema-de-nivelacion' },
+      { label: 'Para la colocación', href: '/productos/Terminaciones/Para-la-colocacion' },
+      { label: 'Accesorios para baños', href: '/productos/Terminaciones/accesorios-para-banos' },
+      { label: 'Sistemas de drenaje', href: '/productos/Terminaciones/sistemas-de-drenaje' },
+    ],
+  },
+  { type: 'link', label: 'Conexiones', href: '/productos/conexiones' },
+  {
+    type: 'dropdown',
+    label: 'Sanitarios',
+    items: [
+      { label: 'Asientos', href: '/productos/Sanitarios/Asientos' },
+      { label: 'Sanitarios', href: '/productos/Sanitarios/productos-sanitarios' },
+      { label: 'Decoración', href: '/productos/Sanitarios/Decoracion' },
+    ],
+  },
+  {
+    type: 'dropdown',
+    label: 'Deco',
+    items: [
+      { label: 'Cerámicas', href: '/productos/Deco/Cerámica' },
+      { label: 'Vidrio', href: '/productos/Deco/Vidrio' },
+      { label: 'Piletas', href: '/productos/Deco/Piletas' },
+      { label: 'Guardas y Terminaciones', href: '/productos/Deco/Guardas-y-terminaciones' },
+    ],
+  },
+];
+---
+
+<header class="header">
+  <div class="container">
+    <div class="d-flex flex-column flex-lg-row justify-content-between align-items-center gap-3">
+      <a href="/" class="navbar-brand">
+        <img src="/Img/logoruben2.png" alt="HRG2 Logo" class="img-fluid" style="max-height: 80px; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.2));" />
+      </a>
+
+      <div class="d-none d-lg-flex align-items-center gap-4">
+        <div class="d-flex align-items-center text-white gap-2">
+          <i class="fas fa-map-marker-alt text-secondary" style="font-size: 1.2rem;"></i>
+          <div style="font-size: 0.85rem; line-height: 1.3;">
+            <span class="d-block text-muted">Ubicación</span>
+            <strong>Larralde 4608, CABA</strong>
+          </div>
+        </div>
+        <div class="d-flex align-items-center text-white gap-2">
+          <i class="fas fa-clock text-secondary" style="font-size: 1.2rem;"></i>
+          <div style="font-size: 0.85rem; line-height: 1.3;">
+            <span class="d-block text-muted">Horarios</span>
+            <strong>Lun-Vie: 8-12h y 15-18h</strong>
+          </div>
+        </div>
+        <a href="https://wa.me/5491150038106" target="_blank" class="btn btn-primary btn-whatsapp" style="background: linear-gradient(135deg, #25D366 0%, #128C7E 100%); border: none; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.25);">
+          <i class="fab fa-whatsapp"></i> WhatsApp Ventas
+        </a>
+      </div>
+    </div>
+
+    <div class="d-block d-lg-none text-center mt-3">
+      <a
+        href="https://wa.me/5491150038106"
+        target="_blank"
+        class="btn w-100"
+        style="background: linear-gradient(135deg, #25D366 0%, #128C7E 100%); color: white; border: none; font-weight: 700; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.25);"
+      >
+        <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
+      </a>
+    </div>
+  </div>
+
+  <nav class="navbar navbar-expand-lg header__nav py-2">
+    <div class="container-fluid">
+      <span class="navbar-brand d-lg-none text-uppercase fw-bold text-secondary" style="font-size: 0.9rem; letter-spacing: 0.05em;">Categorías</span>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#menuCategorias" aria-controls="menuCategorias" aria-expanded="false" aria-label="Toggle navigation" style="padding: 0.25rem;">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-center" id="menuCategorias">
+        <ul class="navbar-nav align-items-center">
+          <li class="nav-item">
+            <a class="nav-link" href="/"><i class="fas fa-home me-1"></i> Inicio</a>
+          </li>
+
+          {nav.map((entry) =>
+            entry.type === 'dropdown' ? (
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">{entry.label}</a>
+                <ul class="dropdown-menu">
+                  {entry.items.map((item) => (
+                    <li><a class="dropdown-item" href={item.href}>{item.label}</a></li>
+                  ))}
+                </ul>
+              </li>
+            ) : (
+              <li class="nav-item">
+                <a class="nav-link" href={entry.href}>{entry.label}</a>
+              </li>
+            )
+          )}
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

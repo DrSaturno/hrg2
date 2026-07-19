@@ -1,0 +1,140 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import catalog from '../../data/catalog.json';
+
+interface SpecTable {
+  headers: string[];
+  rows: string[][];
+}
+
+interface CatalogNode {
+  slug: string;
+  type: 'listing' | 'product';
+  title: string;
+  parent: string | null;
+  // listing
+  children?: string[];
+  emptyMessage?: string | null;
+  // product
+  image?: { src: string; alt: string } | null;
+  description?: string | null;
+  sku?: string | null;
+  specs?: SpecTable | null;
+  pdf?: string | null;
+}
+
+const nodes = catalog as CatalogNode[];
+const nodeMap = new Map(nodes.map((n) => [n.slug, n]));
+
+export function getStaticPaths() {
+  return (catalog as CatalogNode[]).map((node) => ({
+    params: { slug: node.slug },
+    props: { node },
+  }));
+}
+
+const { node } = Astro.props as { node: CatalogNode };
+const parent = node.parent ? nodeMap.get(node.parent) : null;
+
+const description =
+  node.type === 'product'
+    ? (node.description || `${node.title} — HRG2, materiales para obra.`).slice(0, 155)
+    : `Catálogo de ${node.title} — HRG2, materiales para obra en CABA y Gran Buenos Aires.`;
+
+const descriptionParagraphs = node.description ? node.description.split('\n\n') : [];
+---
+
+<BaseLayout title={node.title} description={description} ogImage={node.image?.src}>
+  {node.type === 'listing' ? (
+    <main class="container mt-5 mb-5">
+      <h1 class="text-center mb-5">{node.title}</h1>
+
+      {(!node.children || node.children.length === 0) ? (
+        <div class="text-center mt-5 mb-5">
+          <p class="text-muted" style="font-size: 1.2rem;">
+            {node.emptyMessage || 'No hay productos disponibles en esta categoría por el momento.'}
+          </p>
+        </div>
+      ) : (
+        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3 g-md-4">
+          {node.children.map((childSlug) => {
+            const child = nodeMap.get(childSlug);
+            if (!child) return null;
+            return (
+              <ProductCard
+                href={`/productos/${child.slug}`}
+                image={child.type === 'product' ? child.image?.src || '/Img/logoruben2.png' : '/Img/logoruben2.png'}
+                alt={child.type === 'product' ? child.image?.alt || child.title : child.title}
+                title={child.title}
+                description={child.type === 'product' && child.description ? child.description.split('\n\n')[0].slice(0, 90) : undefined}
+                ctaLabel={child.type === 'listing' ? 'Ver categoría' : 'Ver Producto'}
+              />
+            );
+          })}
+        </div>
+      )}
+
+      {parent && (
+        <div class="text-center mt-5">
+          <a href={`/productos/${parent.slug}`} class="btn btn-primary mt-4">Volver a {parent.title}</a>
+        </div>
+      )}
+    </main>
+  ) : (
+    <main class="container my-5">
+      <div class="row g-5 align-items-start">
+        <div class="col-md-6">
+          <div class="product-detail-img">
+            {node.image && (
+              <img src={node.image.src} alt={node.image.alt} class="img-fluid rounded" loading="eager" decoding="async" />
+            )}
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="product-info-box">
+            <h1>{node.title}</h1>
+            {node.sku && <span class="sku">SKU: {node.sku}</span>}
+
+            {descriptionParagraphs.map((p) => (
+              <p>{p}</p>
+            ))}
+
+            {node.specs && (
+              <table class="table table-bordered text-center align-middle mt-4 tabla-medidas">
+                <thead class="table-light">
+                  <tr>
+                    {node.specs.headers.map((h) => (
+                      <th>{h}</th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {node.specs.rows.map((row) => (
+                    <tr>
+                      {row.map((cell) => (
+                        <td>{cell}</td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            )}
+
+            {node.pdf && (
+              <a href={node.pdf} download class="btn btn-secondary mt-3">
+                <i class="fas fa-download"></i> Descargar catálogo PDF
+              </a>
+            )}
+
+            {parent && (
+              <div class="mt-4">
+                <a href={`/productos/${parent.slug}`} class="btn btn-primary">Volver a {parent.title}</a>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </main>
+  )}
+</BaseLayout>

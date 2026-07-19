@@ -1,0 +1,45 @@
+---
+interface Props {
+  href: string;
+  image: string;
+  alt: string;
+  title: string;
+  badge?: string;
+  description?: string;
+  categoria?: string;
+  ctaLabel?: string;
+  eager?: boolean;
+}
+
+const {
+  href,
+  image,
+  alt,
+  title,
+  badge,
+  description,
+  categoria,
+  ctaLabel = 'Ver más',
+  eager = false,
+} = Astro.props;
+---
+
+<div class="col producto" data-categoria={categoria}>
+  <div class="card">
+    {badge && <span class="card-badge">{badge}</span>}
+    <img
+      src={image}
+      class="card-img-top"
+      alt={alt}
+      loading={eager ? 'eager' : 'lazy'}
+      decoding="async"
+      width="400"
+      height="300"
+    />
+    <div class="card-body">
+      <h5 class="card-title">{title}</h5>
+      {description && <p class="card-text">{description}</p>}
+      <a href={href} class="btn btn-primary btn-sm">{ctaLabel}</a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.hrg2materiales.com.ar/sitemap-index.xml

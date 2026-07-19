@@ -1,0 +1,158 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProductCard from '../components/ProductCard.astro';
+
+const instalables = [
+  { badge: 'Cocina', image: '/Img/SoncaHermanos/Campanas/Campana_linea_murano.jpg', alt: 'Campanas', title: 'Campanas', href: '/productos/Instalables/campanas' },
+  { badge: 'Cocina', image: '/Img/SoncaHermanos/Purificadores/Purificadores_de_Cocina.jpg', alt: 'Purificadores', title: 'Purificadores', href: '/productos/Instalables/purificadores' },
+  { badge: 'Ventilación', image: '/Img/SoncaHermanos/Extractores/Extractores Cocina.jpg', alt: 'Extractores', title: 'Extractores', href: '/productos/Instalables/Extractores' },
+  { badge: 'Accesorios', image: '/Img/SoncaHermanos/Activadores/Activador Metálico.jpg', alt: 'Activadores', title: 'Activadores', href: '/productos/Instalables/Activadores' },
+  { badge: 'Baño', image: '/Img/SoncaHermanos/Botiquines/Botiquin.jpg', alt: 'Botiquines', title: 'Botiquines', href: '/productos/Instalables/Botiquines' },
+  { badge: 'Baño', image: '/Img/SoncaHermanos/Vanitorys/Vanitory2.jpg', alt: 'Vanitorys', title: 'Vanitorys', href: '/productos/Instalables/Vanitorys' },
+];
+
+const terminaciones = [
+  { badge: 'Perfiles', image: '/Img/ATRIM/Perfiles Decorativos/Angulos/angulo13.jpg', alt: 'Perfiles Decorativos', title: 'Perfiles Decorativos', href: '/productos/Terminaciones/Perfiles-decorativos' },
+  { badge: 'Técnico', image: '/Img/ATRIM/Perfiles Tecnicos/Juntas de Dilatacion/dilatacion14.webp', alt: 'Perfil Técnico', title: 'Perfil Técnico', href: '/productos/Terminaciones/Perfiles-tecnicos' },
+  { badge: 'Transición', image: '/Img/ATRIM/Perfiles de Transicion/Perfiles para pisos flotantes y alfombras/flotante11.webp', alt: 'Perfiles de Transición', title: 'Perfiles de Transición', href: '/productos/Terminaciones/Perfiles-de-transicion' },
+  { badge: 'Nivelación', image: '/Img/ATRIM/Sistema de nivelacion/Cuñas Niveladoras/cuñas1.webp', alt: 'Sistema de Nivelación', title: 'Sistema de Nivelación', href: '/productos/Terminaciones/sistema-de-nivelacion' },
+  { badge: 'EPS', image: '/Img/ATRIM/Zocalos y contramarcos/Accesorios para zocalos y contramarcos/zc1.webp', alt: 'Zócalos y Contramarcos', title: 'Zócalos y Contramarcos', href: '/productos/Terminaciones/Zocalos-y-contramarcos' },
+  { badge: 'Drenaje', image: '/Img/ATRIM/Sistemas de drenaje/Desagues para duchas/desague10.webp', alt: 'Sistema de Drenaje', title: 'Sistema de Drenaje', href: '/productos/Terminaciones/sistemas-de-drenaje' },
+];
+
+const sanitarios = [
+  { badge: 'Asientos', image: '/Img/Daccord/Asientos/Linea Soft/soft1.jpg', alt: 'Asientos', title: 'Asientos', href: '/productos/Sanitarios/Asientos' },
+  { badge: 'Accesorios', image: '/Img/Daccord/Sanitarios/Accesorios/accesorios8.jpg', alt: 'Accesorios', title: 'Accesorios', href: '/productos/Sanitarios/productos-sanitarios' },
+  { badge: 'Duchas', image: '/Img/Daccord/Sanitarios/Duchadores/duchadores4.jpg', alt: 'Duchadores', title: 'Duchadores', href: '/productos/Sanitarios/productos-sanitarios/duchadores' },
+  { badge: 'Accesorios', image: '/Img/Daccord/Sanitarios/Repisas/repisas2.jpg', alt: 'Repisas', title: 'Repisas', href: '/productos/Sanitarios/productos-sanitarios/repisas' },
+  { badge: 'Deco', image: '/Img/Daccord/Decoracion/Cestos/cestos2.png', alt: 'Cestos', title: 'Cestos', href: '/productos/Sanitarios/Decoracion/cestos' },
+  { badge: 'Deco', image: '/Img/Daccord/Decoracion/Escobillas/escobillas3.jpg', alt: 'Escobillas', title: 'Escobillas', href: '/productos/Sanitarios/Decoracion/escobillas' },
+];
+
+const conexiones = [
+  { badge: 'Flexibles', image: '/Img/Carrusel/07071622_BannerswebCNX-13.jpg', alt: 'LatynFlex', title: 'LatynFlex', descripcion: 'Conexiones flexibles de alta calidad.', pdf: '/Img/PDFS/latynflexok.pdf', label: 'Descargar Catálogo LatynFlex' },
+  { badge: 'Plásticas', image: '/Img/Carrusel/04261608_LATYNPLAST.jpg', alt: 'LatynPlast', title: 'LatynPlast', descripcion: 'Soluciones plásticas para conexiones modernas.', pdf: '/Img/PDFS/Latynplastok.pdf', label: 'Descargar Catálogo LatynPlast' },
+  { badge: 'Válvulas', image: '/Img/Carrusel/07161610_04261608VALFORTE1.jpg', alt: 'Valforte', title: 'Valforte', descripcion: 'Válvulas y accesorios altamente confiables.', pdf: '/Img/PDFS/Valforteok.pdf', label: 'Descargar Catálogo Valforte' },
+];
+---
+
+<BaseLayout
+  title="Materiales para Obra"
+  description="Catálogo oficial HRG2: campanas, perfiles, sanitarios y conexiones de alta calidad para tu obra en CABA y Gran Buenos Aires. Asesoramiento directo por WhatsApp."
+>
+  <div class="container mt-4">
+    <section class="hero-banner">
+      <div class="container px-4 px-md-5">
+        <div class="hero-banner__content">
+          <span class="hero-banner__badge">Catálogo Oficial 2026</span>
+          <h1 class="hero-banner__title">Materiales que definen <span>tu obra</span></h1>
+          <p class="hero-banner__description">
+            Explorá nuestro catálogo interactivo. Encontrá campanas, perfiles, sanitarios y conexiones de la más alta calidad con asesoramiento directo.
+          </p>
+          <div class="hero-banner__actions">
+            <a href="#buscador-section" class="btn btn-primary">
+              <i class="fas fa-search"></i> Explorar Catálogo
+            </a>
+            <a href="https://wa.me/5491150038106" target="_blank" class="btn btn-secondary text-white" style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.25);">
+              <i class="fab fa-whatsapp"></i> WhatsApp Ventas
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="container">
+    <section class="features-grid">
+      <div class="feature-card">
+        <div class="feature-card__icon"><i class="fas fa-truck"></i></div>
+        <h3 class="feature-card__title">Entrega a Obra</h3>
+        <p class="feature-card__desc">Coordinamos la logística directa a tu obra en CABA y Gran Buenos Aires.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card__icon"><i class="fas fa-user-shield"></i></div>
+        <h3 class="feature-card__title">Asesoría Técnica</h3>
+        <p class="feature-card__desc">Te ayudamos a elegir el producto exacto que tu instalación requiere.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card__icon"><i class="fas fa-handshake"></i></div>
+        <h3 class="feature-card__title">Marcas Líderes</h3>
+        <p class="feature-card__desc">Comercializamos productos oficiales de Atrim, Sonca Hermanos, Latyn y más.</p>
+      </div>
+    </section>
+  </div>
+
+  <main class="container my-4">
+    <section class="search-filter-section mb-5" id="buscador-section">
+      <div class="search-filter-box">
+        <div class="row g-3">
+          <div class="col-md-8">
+            <div class="position-relative">
+              <span class="position-absolute top-50 translate-middle-y start-0 ps-3 text-muted"><i class="fas fa-search"></i></span>
+              <input type="text" id="buscador" class="form-control ps-5" placeholder="¿Qué materiales estás buscando? (ej: campanas, perfiles, conexiones...)" />
+            </div>
+          </div>
+          <div class="col-md-4">
+            <select id="filtro-categoria" class="form-select">
+              <option value="todos">Todas las categorías</option>
+              <option value="instalables">Instalables</option>
+              <option value="terminaciones">Terminaciones</option>
+              <option value="sanitarios">Sanitarios</option>
+              <option value="conexiones">Conexiones</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-5">
+      <h2 class="section-title">Instalables</h2>
+      <div class="row row-cols-2 row-cols-md-4 row-cols-lg-6 g-3">
+        {instalables.map((p, i) => (
+          <ProductCard href={p.href} image={p.image} alt={p.alt} title={p.title} badge={p.badge} categoria="instalables" eager={i < 6} />
+        ))}
+      </div>
+    </section>
+
+    <section class="mb-5">
+      <h2 class="section-title">Terminaciones</h2>
+      <div class="row row-cols-2 row-cols-md-4 row-cols-lg-6 g-3">
+        {terminaciones.map((p) => (
+          <ProductCard href={p.href} image={p.image} alt={p.alt} title={p.title} badge={p.badge} categoria="terminaciones" />
+        ))}
+      </div>
+    </section>
+
+    <section class="mb-5">
+      <h2 class="section-title">Sanitarios</h2>
+      <div class="row row-cols-2 row-cols-md-4 row-cols-lg-6 g-3">
+        {sanitarios.map((p) => (
+          <ProductCard href={p.href} image={p.image} alt={p.alt} title={p.title} badge={p.badge} categoria="sanitarios" />
+        ))}
+      </div>
+    </section>
+
+    <section class="mb-5">
+      <h2 class="section-title">Conexiones</h2>
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        {conexiones.map((p) => (
+          <div class="col producto" data-categoria="conexiones">
+            <div class="card p-3">
+              <span class="card-badge">{p.badge}</span>
+              <img src={p.image} class="card-img-top" style="height: 180px; object-fit: cover;" alt={p.alt} loading="lazy" decoding="async" width="400" height="180" />
+              <div class="card-body">
+                <h5 class="card-title">{p.title}</h5>
+                <p class="card-text text-muted mb-3">{p.descripcion}</p>
+                <a href={p.pdf} download class="btn btn-secondary btn-sm w-100">
+                  <i class="fas fa-download"></i> {p.label}
+                </a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  </main>
+
+  <script src="../scripts/search.client.js"></script>
+</BaseLayout>
